@@ -252,8 +252,7 @@ The following illustration shows a message-body formatted in JSON used
 for creating a Virtual Machine (VM) using POST as defined using the
 Nutanix **REST API Explorer**.
 
-![](./autoMedia/media/image2.png){width="6.494416010498687in"
-height="4.0351848206474195in"}
+![](./autoMedia/media/image2.png)
 
 #### **REST API Explorer - JSON Message Response Header – POST /vms/**
 
@@ -261,8 +260,7 @@ The following illustration shows a message-body formatted in JSON for
 creating a Virtual Machine (VM) using POST from within the Nutanix
 **REST API Explorer**.
 
-![](./autoMedia/media/image3.tiff){width="6.498611111111111in"
-height="4.280555555555556in"}
+![](./autoMedia/media/image3.png)
 
 \
 =
@@ -304,40 +302,34 @@ a.  Start a Prism™ Element Console session opening a browser instance
 
 b.  From the dashboard pulldown menu, select the **Storage** dashboard
 
-![](./autoMedia/media/image4.tiff){width="1.8479166666666667in"
-height="1.766114391951006in"}
+![](./autoMedia/media/image4.png)
 
 a.  Create a storage container to persist the Windows ™ and NGT virt-io
     .iso images by performing a mouse-click on the **+ Storage
     Container** button
 
-![](./autoMedia/media/image5.tiff){width="2.9682874015748033in"
-height="0.701340769903762in"}
+![](./autoMedia/media/image5.png)
 
 a.  In the Create Storage Container dialog box, create a container named
     **ISOs** from the default storage pool. Click the Save button when
     done.
 
-![](./autoMedia/media/image6.tiff){width="3.7182874015748033in"
-height="2.7680555555555557in"}
+![](./autoMedia/media/image6.png)
 
 1.  Upload the Windows™ .iso image to the **ISOs** container
 
     a.  From the Gear icon menu, select the **Image Configuration** link
 
-![](./autoMedia/media/image7.tiff){width="1.8849540682414698in"
-height="2.0901793525809276in"}
+![](./autoMedia/media/image7.png)
 
 a.  In the Image Configuration dialog box, mouse-click the +Upload Image
     button
 
-![](./autoMedia/media/image8.tiff){width="3.8107884951881017in"
-height="2.092677165354331in"}
+![](./autoMedia/media/image8.png)
 
 a.  In the Create Image dialog box, complete the fields as shown below:
 
-![](./autoMedia/media/image9.tiff){width="3.38495406824147in"
-height="3.4875in"}
+![](./autoMedia/media/image9.png)
 
 a.  Mouse-click **Choose File** button.
 
@@ -356,8 +348,7 @@ d.  Repeat Step-2, substituting Windows™ .iso image with NGT virt-io
     a.  From the Prism™ UI, select **REST API Explore**r link from the
         **Admin** dropdown menu:
 
-> ![](./autoMedia/media/image10.tiff){width="2.076292650918635in"
-> height="2.1046292650918637in"}
+> ![](./autoMedia/media/image10.png)
 
 3.  In the next set of tasks, you’ll locate the **vms** resource in the
     **REST API Explorer**, and issue the GET **/vms/** API command to
@@ -371,20 +362,17 @@ d.  Repeat Step-2, substituting Windows™ .iso image with NGT virt-io
 
     b.  The Explorer should appear as follows:
 
-> ![](./autoMedia/media/image11.tiff){width="5.218287401574803in"
-> height="2.7569444444444446in"}
+> ![](./autoMedia/media/image11.png)
 
 a.  Mouse-click **GET /vms/** to expand the operation. The page should
     appear as follows:
 
-![](./autoMedia/media/image12.tiff){width="3.93125in"
-height="3.201388888888889in"}
+![](./autoMedia/media/image12.png)
 
 a.  Mouse-click the **Try it out!** button to issue an HTTP GET
     **/vms/** request.
 
-    ![](./autoMedia/media/image13.tiff){width="3.8847222222222224in"
-    height="2.7805555555555554in"}
+    ![](./autoMedia/media/image13.png)
 
 b.  The **Response Body** (shown above) should show a *key:value* of
     “count”:0 with a **Response-Code** 200 (Reference Appendix C for
@@ -412,13 +400,12 @@ b.  The **Response Body** (shown above) should show a *key:value* of
 
 > {"description":"test","guest\_os":"string","memory\_mb":0,"name":"string","num\_cores\_per\_vcpu":0,"num\_vcpus":0,"vm\_disks":\[{"disk\_address":{"device\_bus":"ide","device\_index":0},"is\_cdrom":true,"is\_empty":false,"vm\_disk\_clone":{"disk\_address":{"vmdisk\_uuid":"string"}}},{"disk\_address":{"device\_bus":"scsi","device\_index":0},"vm\_disk\_create":{"storage\_container\_uuid":"string","size":0}},{"disk\_address":{"device\_bus":"ide","device\_index":1},"is\_cdrom":true,"is\_empty":false,"vm\_disk\_clone":{"disk\_address":{"vmdisk\_uuid":"string"}}}\],"hypervisor\_type":"ACROPOLIS","affinity":null}
 >
-> ![](./autoMedia/media/image14.tiff){width="5.4296030183727035in"
-> height="4.069212598425197in"}
+
+![](./autoMedia/media/image14.png)
 
 a.  The results should appear as follows:
 
-> ![](./autoMedia/media/image15.tiff){width="5.43125in"
-> height="2.6381944444444443in"}
+![](./autoMedia/media/image15.png)
 
 a.  Make the recommended changes as needed.
 
@@ -432,8 +419,7 @@ d.  Copy the validated JSON from the **Formatted JSON Data** textbox and
     paste it into the JSON **message-body** of the POST **/vms/** API as
     shown:
 
-> ![](./autoMedia/media/image16.png){width="5.347916666666666in"
-> height="3.558333333333333in"}
+![](./autoMedia/media/image16.png)
 
 3.  In the next set of tasks, we’ll begin constructing the JSON
     **message-body**. The **message-body** defines the VM’s name,
@@ -449,8 +435,7 @@ d.  Copy the validated JSON from the **Formatted JSON Data** textbox and
 
     b.  The Explorer should appear as follows:
 
-> ![](./autoMedia/media/image17.tiff){width="5.18125in"
-> height="1.5534722222222221in"}
+    ![](./autoMedia/media/image17.png)
 
 a.  Mouse-click **GET /storage\_containers/** API to expand the
     operation.
@@ -462,8 +447,7 @@ c.  Verify the request executed successfully by checking for a
     **Response Code** of 200 (Reference Appendix C for additional
     Response Codes as needed for debug).
 
-    ![](./autoMedia/media/image18.tiff){width="5.097916666666666in"
-    height="0.5104166666666666in"}
+    ![](./autoMedia/media/image18.png)
 
 d.  Scroll through the **Response Body** and locate the storage
     container instance with *key:value* “name”:”default-container-NNN”,
@@ -474,8 +458,7 @@ e.  Once you’ve located *key:value* “name”:”default-container-NNN”,
     corresponding to the “storage container uuid” *key*. Paste the
     **value** to notepad for future use.
 
-> ![](./autoMedia/media/image19.tiff){width="5.264583333333333in"
-> height="2.683333333333333in"}
+    ![](./autoMedia/media/image19.png)
 
 ***NOTE:*** The **value** will be used for the “storage container uuid”
 *key:value* within the POST **/vms/** JSON **message-body.**
@@ -487,9 +470,8 @@ b.  Once *key:value* “name”:”ISOs” has been located, copy the **value**
     corresponding to the “storage container uuid” *key*. Paste the
     **value** to notepad for future use…
 
-> ![](./autoMedia/media/image20.tiff){width="5.264583333333333in"
-> height="2.701388888888889in"}
->
+![](./autoMedia/media/image20.png)
+
 > ***NOTE:*** The **value** will be used for referencing the “storage
 > container uuid” *key:value* within the GET **/images/** resource
 > **Response Body.**
@@ -504,8 +486,7 @@ b.  Using the **REST API Explorer**, locate the **images** resource and
 
 c.  The Explorer should appear as follows:
 
-    ![](./autoMedia/media/image21.tiff){width="5.18125in"
-    height="2.4375in"}
+![](./autoMedia/media/image21.png)
 
 d.  Mouse-click the **GET /images/** API to expand the operation.
 
