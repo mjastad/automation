@@ -302,19 +302,19 @@ a.  Start a Prism™ Element Console session opening a browser instance
 
 b.  From the dashboard pulldown menu, select the **Storage** dashboard
 
-![](./autoMedia/media/image4.png)
+> ![](./autoMedia/media/image4.png)
 
 a.  Create a storage container to persist the Windows ™ and NGT virt-io
     .iso images by performing a mouse-click on the **+ Storage
     Container** button
 
-![](./autoMedia/media/image5.png)
+> ![](./autoMedia/media/image5.png)
 
 a.  In the Create Storage Container dialog box, create a container named
     **ISOs** from the default storage pool. Click the Save button when
     done.
 
-![](./autoMedia/media/image6.png)
+> ![](./autoMedia/media/image6.png)
 
 1.  Upload the Windows™ .iso image to the **ISOs** container
 
@@ -325,11 +325,11 @@ a.  In the Create Storage Container dialog box, create a container named
 a.  In the Image Configuration dialog box, mouse-click the +Upload Image
     button
 
-![](./autoMedia/media/image8.png)
+> ![](./autoMedia/media/image8.png)
 
 a.  In the Create Image dialog box, complete the fields as shown below:
 
-![](./autoMedia/media/image9.png)
+> ![](./autoMedia/media/image9.png)
 
 a.  Mouse-click **Choose File** button.
 
@@ -367,12 +367,12 @@ d.  Repeat Step-2, substituting Windows™ .iso image with NGT virt-io
 a.  Mouse-click **GET /vms/** to expand the operation. The page should
     appear as follows:
 
-![](./autoMedia/media/image12.png)
+> ![](./autoMedia/media/image12.png)
 
 a.  Mouse-click the **Try it out!** button to issue an HTTP GET
     **/vms/** request.
 
-    ![](./autoMedia/media/image13.png)
+> ![](./autoMedia/media/image13.png)
 
 b.  The **Response Body** (shown above) should show a *key:value* of
     “count”:0 with a **Response-Code** 200 (Reference Appendix C for
@@ -400,12 +400,12 @@ b.  The **Response Body** (shown above) should show a *key:value* of
 
 > {"description":"test","guest\_os":"string","memory\_mb":0,"name":"string","num\_cores\_per\_vcpu":0,"num\_vcpus":0,"vm\_disks":\[{"disk\_address":{"device\_bus":"ide","device\_index":0},"is\_cdrom":true,"is\_empty":false,"vm\_disk\_clone":{"disk\_address":{"vmdisk\_uuid":"string"}}},{"disk\_address":{"device\_bus":"scsi","device\_index":0},"vm\_disk\_create":{"storage\_container\_uuid":"string","size":0}},{"disk\_address":{"device\_bus":"ide","device\_index":1},"is\_cdrom":true,"is\_empty":false,"vm\_disk\_clone":{"disk\_address":{"vmdisk\_uuid":"string"}}}\],"hypervisor\_type":"ACROPOLIS","affinity":null}
 >
-
-![](./autoMedia/media/image14.png)
+>
+> ![](./autoMedia/media/image14.png)
 
 a.  The results should appear as follows:
 
-![](./autoMedia/media/image15.png)
+> ![](./autoMedia/media/image15.png)
 
 a.  Make the recommended changes as needed.
 
@@ -419,7 +419,7 @@ d.  Copy the validated JSON from the **Formatted JSON Data** textbox and
     paste it into the JSON **message-body** of the POST **/vms/** API as
     shown:
 
-![](./autoMedia/media/image16.png)
+> ![](./autoMedia/media/image16.png)
 
 3.  In the next set of tasks, we’ll begin constructing the JSON
     **message-body**. The **message-body** defines the VM’s name,
@@ -435,7 +435,7 @@ d.  Copy the validated JSON from the **Formatted JSON Data** textbox and
 
     b.  The Explorer should appear as follows:
 
-    ![](./autoMedia/media/image17.png)
+> ![](./autoMedia/media/image17.png)
 
 a.  Mouse-click **GET /storage\_containers/** API to expand the
     operation.
@@ -447,7 +447,7 @@ c.  Verify the request executed successfully by checking for a
     **Response Code** of 200 (Reference Appendix C for additional
     Response Codes as needed for debug).
 
-    ![](./autoMedia/media/image18.png)
+> ![](./autoMedia/media/image18.png)
 
 d.  Scroll through the **Response Body** and locate the storage
     container instance with *key:value* “name”:”default-container-NNN”,
@@ -458,7 +458,7 @@ e.  Once you’ve located *key:value* “name”:”default-container-NNN”,
     corresponding to the “storage container uuid” *key*. Paste the
     **value** to notepad for future use.
 
-    ![](./autoMedia/media/image19.png)
+> ![](./autoMedia/media/image19.png)
 
 ***NOTE:*** The **value** will be used for the “storage container uuid”
 *key:value* within the POST **/vms/** JSON **message-body.**
@@ -470,7 +470,7 @@ b.  Once *key:value* “name”:”ISOs” has been located, copy the **value**
     corresponding to the “storage container uuid” *key*. Paste the
     **value** to notepad for future use…
 
-![](./autoMedia/media/image20.png)
+> ![](./autoMedia/media/image20.png)
 
 > ***NOTE:*** The **value** will be used for referencing the “storage
 > container uuid” *key:value* within the GET **/images/** resource
@@ -486,7 +486,7 @@ b.  Using the **REST API Explorer**, locate the **images** resource and
 
 c.  The Explorer should appear as follows:
 
-![](./autoMedia/media/image21.png)
+> ![](./autoMedia/media/image21.png)
 
 d.  Mouse-click the **GET /images/** API to expand the operation.
 
@@ -497,8 +497,7 @@ f.  Verify the request executed successfully by checking for a
     **Response Code** of 200 (Reference Appendix C for additional
     Response Codes if needed for debug).
 
-> ![](./autoMedia/media/image18.tiff){width="5.096061898512686in"
-> height="0.5120374015748032in"}
+> ![](./autoMedia/media/image18.png)
 
 o.  Scroll through the **Response Body** and locate
     “storage\_container\_uuid” *key* and cross-reference its **value**
@@ -512,8 +511,7 @@ p.  Once a match has been found, cross-reference the **image** resource
     each “vm\_disk\_id” *key* to notepad, tagging each **value** with
     the corresponding **image** resource instance “name”.
 
-> ![](./autoMedia/media/image22.tiff){width="5.406049868766404in"
-> height="2.7111111111111112in"}
+> ![](./autoMedia/media/image22.png)
 
 o.  Now we can complete the construction of the POST **/vms/** JSON
     **message-body.** Using the **REST API Explorer**, locate and expand
@@ -583,8 +581,7 @@ o.  Now we can complete the construction of the POST **/vms/** JSON
 
 p.  The POST **/vms/** JSON **message-body** should look as follows:
 
-> ![](./autoMedia/media/image23.tiff){width="5.264583333333333in"
-> height="4.891193132108486in"}
+> ![](./autoMedia/media/image23.png)
 
 o.  The final JSON **message-body** needs to be verified prior to
     issuing an HTTP POST **/vms/** request. Verification can be achieved
@@ -603,21 +600,18 @@ o.  Once the JSON has successfully completed validation, mouse-click the
 p.  Verify the HTTP POST **/vms/** request was successful by verifying
     **Response code** 201.
 
-> ![](./autoMedia/media/image24.tiff){width="5.220833333333333in"
-> height="1.3083333333333333in"}
+> ![](./autoMedia/media/image24.png)
 
 o.  Verify the VM can be read using the GET **/vms/** API. Using the
     **REST API Explorer**, Navigate to GET **/vms/** API, and
     mouse-click the **Try it out!** button to issue an HTTP GET
     **/vms/** request. The page should look similar as follows:
 
-> ![](./autoMedia/media/image25.tiff){width="5.18125in"
-> height="2.558108048993876in"}
+> ![](./autoMedia/media/image25.png)
 
 o.  Verify the new VM is visible in Prism™ Element.
 
-> ![](./autoMedia/media/image26.tiff){width="5.18125in"
-> height="1.4652777777777777in"}
+> ![](./autoMedia/media/image26.png)
 
 3.  In the following sequence of tasks, participants will power the
     Windows Guest VM ON/OFF using the POST
@@ -636,8 +630,7 @@ o.  Verify the new VM is visible in Prism™ Element.
         VM Power State is “off”. Copy the VM’s “uuid” key value and
         paste it to notebook or clipboard for future reference.
 
-        ![](./autoMedia/media/image27.tiff){width="5.347691382327209in"
-        height="2.9055555555555554in"}
+    ![](./autoMedia/media/image27.png)
 
     d.  Navigate to POST **/vms/{uuid}/set\_power\_state/**, and
         mouse-click the API to expand (if needed).
@@ -650,15 +643,13 @@ o.  Verify the new VM is visible in Prism™ Element.
         field. Set the “transition” key value to “ON”. Remove host\_uuid
         key from the JSON **message-body.**
 
-> ![](./autoMedia/media/image28.png){width="5.429861111111111in"
-> height="4.655555555555556in"}
+> ![](./autoMedia/media/image28.png)
 
 a.  Mouse-click **Try it out!** button to issue an POST
     **/vms/{uuid}/set\_power\_state/** request. Verify **Response Code**
     (201).
 
-    ![](./autoMedia/media/image24.tiff){width="5.431025809273841in"
-    height="1.4842596237970254in"}
+    ![](./autoMedia/media/image24.png)
 
 b.  Verify the Windows Guest VM Power State has changed using the **REST
     API Explorer**. Navigate to GET **/vms/** API and expand (if
@@ -668,14 +659,12 @@ b.  Verify the Windows Guest VM Power State has changed using the **REST
 c.  Verify **Response Code** 200. Scroll through the Response Body to
     verify Power State reflects “ON”.
 
-> ![](./autoMedia/media/image29.tiff){width="5.201257655293088in"
-> height="3.0629625984251967in"}
+> ![](./autoMedia/media/image29.png)
 
 a.  Verify the VM power state is visible and powered on in Prism™
     Element.
 
-> ![](./autoMedia/media/image30.tiff){width="5.18125in"
-> height="1.7291666666666667in"}
+> ![](./autoMedia/media/image30.png)
 
 a.  To power off the Windows Guest VM, use the **REST API Explorer** to
     navigate back the POST **/vms/{uuid}/set\_power\_state/** API, and
@@ -685,8 +674,7 @@ b.  Edit the power state in the JSON **message-body** from “ON” to
     “OFF”. Be sure the **uuid** represents the correct VM target to be
     powered down.
 
-> ![](./autoMedia/media/image31.tiff){width="5.2644116360454944in"
-> height="1.6729910323709536in"}
+> ![](./autoMedia/media/image31.png)
 
 a.  Mouse-click **Try it out!** button to issue POST
     **/vms/{uuid}/set\_power\_state/** request. Verify **Response Code**
@@ -697,8 +685,7 @@ b.  Using the **REST API Explorer**, navigate to GET **/vms/** API and
     GET **/vms/** request. Check that the Windows Guest VM power-state
     is “off”.
 
-> ![](./autoMedia/media/image32.tiff){width="5.452646544181977in"
-> height="3.442592957130359in"}
+> ![](./autoMedia/media/image32.png)
 
 3.  In the following sequence of tasks, participants will delete the
     Windows Guest VM using the REST API.
@@ -716,21 +703,18 @@ b.  Paste the target VM’s “uuid” key value in the “uuid” field, and
     mouse-click the **Try it out!** button to issue HTTP DELETE
     **/vms/{uuid}/** request.
 
-> ![](./autoMedia/media/image33.tiff){width="5.514583333333333in"
-> height="5.853841863517061in"}
+> ![](./autoMedia/media/image33.png)
 
 a.  Using the **REST API Explorer**, navigate to GET **/vms/** API and
     expand (if needed). Mouse-click the **Try it out!** button to issue
     an HTTP GET **/vms/** request. Verify that the Windows™ Guest VM has
     been deleted.
 
-> ![](./autoMedia/media/image34.tiff){width="5.43125in"
-> height="3.482638888888889in"}
+> ![](./autoMedia/media/image34.png)
 
 a.  Verify the VM is no longer visible in Prism™ Element.
 
-> ![](./autoMedia/media/image35.tiff){width="5.43125in"
-> height="1.9666666666666666in"}
+> ![](./autoMedia/media/image35.png)
 
 Postman Exercise
 ================
@@ -770,8 +754,7 @@ The goal and/or objectives of this exercise include:
 a.  Once installed and or unzipped, launch postman. On Mac OSX you might
     see the following:
 
-> ![](./autoMedia/media/image36.tiff){width="4.18125in"
-> height="1.2708333333333333in"}
+> ![](./autoMedia/media/image36.png)
 
 a.  Click “Open” to proceed.
 
@@ -786,20 +769,17 @@ d.  It’s recommended (but not required) to create an account to leverage
     right of Postman’s main landing page and follow the steps provided
     by Postman. Otherwise proceed to the next step and use as-is.
 
-> ![](./autoMedia/media/image37.tiff){width="3.93125in"
-> height="0.41944444444444445in"}
+> ![](./autoMedia/media/image37.png)
 
 a.  Disable SSL Certificates by navigating Postman Main Menu and select
     “Preferences”.
 
-> ![](./autoMedia/media/image38.tiff){width="1.5979166666666667in"
-> height="1.7527777777777778in"}
+> ![](./autoMedia/media/image38.png)
 
 a.  Toggle “SSL certificate verification to “off”. Insure other settings
     are the same as follows:
 
-> ![](./autoMedia/media/image39.tiff){width="4.514583333333333in"
-> height="2.8453707349081365in"}
+> ![](./autoMedia/media/image39.png)
 
 a.  Once settings have been changed, restart Postman.
 
@@ -827,26 +807,22 @@ a.  Once settings have been changed, restart Postman.
 a.  Start collection creation by clicking on “Collections” and the
     clicking the “Create New Collection Icon”.
 
-> ![](./autoMedia/media/image40.tiff){width="1.8756255468066492in"
-> height="1.4935181539807525in"}
+> ![](./autoMedia/media/image40.png)
 
 a.  Enter the collection Name “Nutanix” and a brief description as show
     below. Click **Create** button to save.
 
-> ![](./autoMedia/media/image41.tiff){width="2.93125in"
-> height="3.3941119860017497in"}
+> ![](./autoMedia/media/image41.png)
 
 a.  Create a subfolder under the Nutanix collection, by clicking the
     ellipses to access the dropdown menu and select **Add Folder**
 
-> ![](./autoMedia/media/image42.tiff){width="1.387020997375328in"
-> height="2.9379625984251967in"}
+> ![](./autoMedia/media/image42.png)
 
 a.  Create the Add Folder by adding the name ‘*V2:Images’*, followed by
     a brief description, and then click **Create** button to save.
 
-> ![](./autoMedia/media/image43.tiff){width="3.43125in"
-> height="3.9562029746281713in"}
+> ![](./autoMedia/media/image43.png)
 
 a.  Repeat steps **c** & **d** to create the following subfolders
 
@@ -856,8 +832,7 @@ a.  Repeat steps **c** & **d** to create the following subfolders
 
 b.  Results should appear as follows:
 
-> ![](./autoMedia/media/image44.tiff){width="3.0145833333333334in"
-> height="2.8582075678040244in"}
+> ![](./autoMedia/media/image44.png)
 
 a.  Now we’ll add requests (i.e. Nutanix REST APIs) to our newly created
     collection folders. This is accomplished using the following
@@ -886,8 +861,7 @@ i.  Upon successful execution, click **Save** button and save the
 a.  Login into Prism Element, click **Admin**, and select REST API
     Explorer from the dropdown menu.
 
-> ![](./autoMedia/media/image45.tiff){width="1.7390266841644795in"
-> height="2.0629625984251967in"}
+> ![](./autoMedia/media/image45.png)
 
 a.  From the REST API Explorer, find the “GET /VMS/” API request and
     execute the API by clicking **Try it out!** button.
@@ -897,27 +871,23 @@ b.  Upon successful execution (Response code: 200), copy the Request URL
 
 > REST API Explorer – Copy Request URL:
 >
-> ![](./autoMedia/media/image46.tiff){width="5.264583333333333in"
-> height="0.58125in"}
+> ![](./autoMedia/media/image46.png)
 >
 > Postman Execution tab – Paste URL:
 >
-> ![](./autoMedia/media/image47.tiff){width="5.264583333333333in"
-> height="0.7840277777777778in"}
+> ![](./autoMedia/media/image47.png)
 
 a.  Within Postman, click **Authorization** link, select type **Basic
     Auth.** Add Prism Elements *username* and *password* to their
     appropriate fields, and check **“Save helper data to request”**
 
-> ![](./autoMedia/media/image48.tiff){width="5.597916666666666in"
-> height="2.160184820647419in"}
+> ![](./autoMedia/media/image48.png)
 
 a.  Within Postman, insure **GET** is the selected HTTP request type,
     click **Send** button, and check for successful execution (Status:
     200 OK).
 
-> ![](./autoMedia/media/image49.tiff){width="5.43125in"
-> height="2.6555555555555554in"}
+> ![](./autoMedia/media/image49.png)
 
 a.  Upon successful execution, click Save button. A Modal Dialog titled
     **SAVE REQUEST** should appear with the **Request Name**
@@ -926,14 +896,12 @@ a.  Upon successful execution, click Save button. A Modal Dialog titled
     folder**. Select Nutanix, and then V2:VMS. Click **Save** button
     when completed to save and close dialog.
 
-> ![](./autoMedia/media/image50.tiff){width="3.266524496937883in"
-> height="4.095370734908136in"}
+> ![](./autoMedia/media/image50.png)
 
 a.  The Collections within Postman should now show the new request added
     to folder ***Nutanix, V2:VMS*** .
 
-> ![](./autoMedia/media/image51.tiff){width="2.43125in"
-> height="2.7656342957130358in"}
+> ![](./autoMedia/media/image51.png)
 
 a.  Complete the following GET request operations using the REST API
     Explorer, and adding them to their appropriate Postman
@@ -956,36 +924,31 @@ a.  Upon successful execution of the of the POST /vms/ command from the
     REST API Explorer, copy the Request URL to Postman Execution tab.
     Set the HTTP Request type to POST.
 
-> ![](./autoMedia/media/image52.tiff){width="5.43125in"
-> height="1.1340277777777779in"}
+> ![](./autoMedia/media/image52.png)
 
 a.  Configure **Authorization Type** within Postman by selecting **Basic
     Auth**. Insure the username and password is set correctly, and
     **Save helper data to request** checkbox is checked.
 
-> ![](./autoMedia/media/image53.tiff){width="5.430225284339458in"
-> height="2.9518514873140855in"}
+> ![](./autoMedia/media/image53.png)
 
 a.  Within Postman, click on **Body**, click **raw**, and click **text**
     to select **JSON (application/json)** from the dropdown menu.
 
-> ![](./autoMedia/media/image54.tiff){width="5.43078302712161in"
-> height="3.192592957130359in"}
+> ![](./autoMedia/media/image54.png)
 
 a.  Within the REST API Explorer, copy the **JSON body** used to create
     the VM to the text field within Postman’s execution pane, and click
     **Send** button.
 
-> ![](./autoMedia/media/image55.tiff){width="5.347916666666666in"
-> height="3.657638888888889in"}
+> ![](./autoMedia/media/image55.png)
 
 a.  The results should look similar as follows with a status of 201
     Created:
 
 > **Note:** The task\_uuid will most likely look different
 >
-> ![](./autoMedia/media/image56.tiff){width="5.264583333333333in"
-> height="3.673611111111111in"}
+> ![](./autoMedia/media/image56.png)
 
 a.  Upon successful execution, click Save button. A Modal Dialog titled
     **SAVE REQUEST** should appear with the **Request Name**
@@ -994,8 +957,7 @@ a.  Upon successful execution, click Save button. A Modal Dialog titled
     folder**. Select Nutanix, followed by V2:VMS. Click **Save** button
     when completed to save and close dialog.
 
-> ![](./autoMedia/media/image57.tiff){width="3.597916666666667in"
-> height="4.531606517935258in"}
+> ![](./autoMedia/media/image57.png)
 
 a.  Repeat the steps above to add the following requests to their
     respective collection folder:
@@ -1007,8 +969,7 @@ a.  Repeat the steps above to add the following requests to their
 b.  When complete, the Postman Nutanix collections should show 6
     requests, and structured as follows:
 
-> ![](./autoMedia/media/image58.tiff){width="1.969116360454943in"
-> height="3.1555555555555554in"}
+> ![](./autoMedia/media/image58.png)
 
 a.  At this point you should be able to run the various requests within
     Postman. And view the data as needed.
@@ -1041,8 +1002,7 @@ feature.
         **Code** under the **Save** button next to the blue **Send**
         button.
 
-> ![](./autoMedia/media/image59.tiff){width="5.514583333333333in"
-> height="3.372916666666667in"}
+> ![](./autoMedia/media/image59.png)
 
 a.  Select **cURL** from the dropdown menu. Add “--insecure” just after
     the curl command and before the –X. Click **Copy to Clipboard**
@@ -1050,15 +1010,13 @@ a.  Select **cURL** from the dropdown menu. Add “--insecure” just after
 
 > **Note:** --insecure is required since we’re not using certificates…
 >
-> ![](./autoMedia/media/image60.tiff){width="5.0966786964129485in"
-> height="1.2481485126859142in"}
+> ![](./autoMedia/media/image60.png)
 
 a.  Open a terminal (windows: cmd) session and paste the clipboard
     content to the command line, and hit enter. The cURL command should
     execute, generating the following output:
 
-> ![](./autoMedia/media/image61.tiff){width="5.416501531058618in"
-> height="3.808333333333333in"}
+> ![](./autoMedia/media/image61.png)
 
 a.  The above is raw output from curl, and represents JSON as a string.
 
@@ -1108,13 +1066,3 @@ Appendix A – HTTP Response Codes (subset):
   500                     Internal Server Error   The server encountered an unexpected condition which prevented it from fulfilling the request.
   -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-INTENTIONALLY LEFT BLANK
-
-[^1]: HTTP uses a **&lt;major&gt;.&lt;minor&gt;** numbering scheme to
-    indicate versions of the protocol. The version of an HTTP message is
-    indicated by an HTTP-Version field.
-
-[^2]: If **port** is empty or not given, port 80 is assumed for HTTP.
-    Empty **abs\_path** is equivalent to "/".
-
-[^3]: Should always be in uppercase.
