@@ -1036,33 +1036,3 @@ b.  In this exercise you should generate curl commands using Postman for
 
     vi. Delete a VM using - DEL vms/{uuid}
 
-Appendix A – HTTP Response Codes (subset):
-==========================================
-
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **HTTP STATUS CODES**
-  ----------------------- ----------------------- -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-  **CODE**                **DEFINTION**           **DESCRIPTION**
-
-  200                     OK                      The request has succeeded. The information returned with the response is dependent on the method used in the request, for example:
-                                                  
-                                                  -   GET an entity corresponding to the requested resource is sent in the response;
-                                                  
-                                                  -   HEAD the entity-header fields corresponding to the requested resource are sent in the response without any message-body;
-                                                  
-                                                  -   POST an entity describing or containing the result of the action;
-                                                  
-                                                  -   TRACE an entity containing the request message as received by the end server.
-                                                  
-
-  201                     Created                 The request has been fulfilled and resulted in a new resource being created. The newly created resource can be referenced by the URI(s) returned in the entity of the response, with the most specific URI for the resource given by a Location header field. The response SHOULD include an entity containing a list of resource characteristics and location(s) from which the user or user agent can choose the one most appropriate. The entity format is specified by the media type given in the Content-Type header field. The origin server MUST create the resource before returning the 201 status code. If the action cannot be carried out immediately, the server SHOULD respond with 202 (Accepted) response instead.
-
-  400                     Bad Request             The request could not be understood by the server due to malformed syntax. The client SHOULD NOT repeat the request without modifications.
-
-  401                     Unauthorized            The request requires user authentication. The response MUST include a WWW-Authenticate header field (section 14.47) containing a challenge applicable to the requested resource. The client MAY repeat the request with a suitable Authorization header field (section 14.8). If the request already included Authorization credentials, then the 401 response indicates that authorization has been refused for those credentials. "HTTP Authentication: Basic and Digest Access Authentication".
-
-  404                     Not Found               The server has not found anything matching the Request-URI.
-
-  500                     Internal Server Error   The server encountered an unexpected condition which prevented it from fulfilling the request.
-  -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
