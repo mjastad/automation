@@ -1,7 +1,7 @@
-from VirtualMachineService import VirtualMachineService
-from User import User
-from Host import Host
-from Connection import Connection
+from core.Connection import Connection
+from core.Host import Host
+from core.User import User
+from services.VirtualMachineService import VirtualMachineService
 
 USER = "admin"
 PASSWD = "passw0rd"
