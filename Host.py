@@ -9,14 +9,18 @@ class Host:
        self.port_address = port
        self.service = Service()
 
+   @property
    def port(self):
        return self.port_address
 
+   @property
    def ip(self):
        return self.ip_address
+
 
    def service(self):
        return self.service
 
+   @property
    def url(self):
-       return "https://%s:%s%s" % (self.ip(), self.port(), self.service.name())
+       return "https://%s:%s%s" % (self.ip, self.port, self.service.name)
