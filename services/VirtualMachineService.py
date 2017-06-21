@@ -1,5 +1,6 @@
-from VirtualMachine import VirtualMachine
-from Task import Task
+from model.Task import Task
+from model.VirtualMachine import VirtualMachine
+
 
 class VirtualMachineService:
 
@@ -27,6 +28,10 @@ class VirtualMachineService:
         task_dictionary = conn.delete(self.RESOURCE_VM + vm.uuid)
         return Task(task_dictionary)
 
+    def updateVM(self, conn, vm, data):
+        task_dictionary = conn.put(self.RESOURCE_VM + vm.uuid, data)
+        return Task(task_dictionary)
+
     def powerOn(self, conn, vm):
         data = {'transition': 'ON', 'uuid': vm.uuid }
         task_dictionary = conn.post(self.RESOURCE_VM + vm.uuid + self.RESOURCE_VM_PWR_STATE, data)
@@ -36,3 +41,9 @@ class VirtualMachineService:
         data = {'transition': 'OFF', 'uuid': vm.uuid }
         task_dictionary = conn.post(self.RESOURCE_VM + vm.uuid + self.RESOURCE_VM_PWR_STATE, data)
         return Task(task_dictionary)
+
+    def find(self, conn, id):
+        vmList = self.getVMS(conn)
+        for vm in vmList :
+            if id == vm.name : return vm
+
