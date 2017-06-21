@@ -18,7 +18,9 @@ def main():
     vmService = VirtualMachineService()
     vmList = vmService.getVMS(connection)
 
-    print vmList[0].uuid()
+    if len(vmList) > 0: print vmList[0].uuid()
+
+
 
 if __name__ == "__main__":
     main()

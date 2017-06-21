@@ -8,11 +8,11 @@ class VirtualMachineService:
         self.RESOURCE_VM_PWR_STATE = '/set_power_state/'
 
     def createVM(self, conn, data):
-        return ' '
+        pass
 
     def getVM(self, conn, uuid):
-        vm_dictionary = conn.get(self.RESOURCE_VM+"/"+uuid)
-        return VirtualMachine(vm_dictionary)
+        vmDictionary = conn.get(self.RESOURCE_VM + uuid)
+        return VirtualMachine(vmDictionary)
 
     def getVMS(self, conn):
         vmList = []
@@ -24,5 +24,5 @@ class VirtualMachineService:
         return vmList
 
     def deleteVM(self, conn, vm):
-        task_dictionary = conn.get(self.RESOURCE_VM + "/" + uuid)
+        task_dictionary = conn.get(self.RESOURCE_VM + vm.uuid())
         return Task(task_dictionary)
