@@ -24,5 +24,15 @@ class VirtualMachineService:
         return vmList
 
     def deleteVM(self, conn, vm):
-        task_dictionary = conn.get(self.RESOURCE_VM + vm.uuid())
+        task_dictionary = conn.delete(self.RESOURCE_VM + vm.uuid)
+        return Task(task_dictionary)
+
+    def powerOn(self, conn, vm):
+        data = {'transition': 'ON', 'uuid': vm.uuid }
+        task_dictionary = conn.post(self.RESOURCE_VM + vm.uuid + self.RESOURCE_VM_PWR_STATE, data)
+        return Task(task_dictionary)
+
+    def powerOff(self, conn, vm):
+        data = {'transition': 'OFF', 'uuid': vm.uuid }
+        task_dictionary = conn.post(self.RESOURCE_VM + vm.uuid + self.RESOURCE_VM_PWR_STATE, data)
         return Task(task_dictionary)
