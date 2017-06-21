@@ -21,6 +21,5 @@ def main():
     for vm in vmList : print vm.name
 
 
-
 if __name__ == "__main__":
     main()
