@@ -1,19 +1,22 @@
+from Service import Service
 
-class Host():
 
-   def __init__(self,ip,port):
-       self.ipaddr = ip
-       self.port = port
+class Host:
+
+   def __init__(self, ip, port):
+
+       self.ip_address = ip
+       self.port_address = port
        self.service = Service()
 
    def port(self):
-       return self.port
+       return self.port_address
 
    def ip(self):
-       return self.ipaddr	
+       return self.ip_address
 
    def service(self):
        return self.service
 
    def url(self):
-       return "https://%s:%s%s" % self.ip() % self.port() % self.service().name()
+       return "https://%s:%s%s" % (self.ip(), self.port(), self.service.name())

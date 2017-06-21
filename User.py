@@ -1,14 +1,14 @@
 
-class User():
+class User:
 
-  def __init__(self, uname, passwd): 
-     self.name = uname
-     self.password = passwd
+  def __init__(self, uname, pwd):
+     self.uname = uname
+     self.passwd = pwd
 
-  def name():
-     return self.name
+  def name(self):
+     return self.uname
 
-  def passwd():
-     return self.password
+  def password(self):
+     return self.passwd
 
 
