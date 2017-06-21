@@ -18,7 +18,7 @@ def main():
     vmService = VirtualMachineService()
     vmList = vmService.getVMS(connection)
 
-    for vm in vmList : print vm.name()
+    for vm in vmList : print vm.name
 
 
 
