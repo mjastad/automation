@@ -1,3 +1,8 @@
+'''
+@file: ImageService.py
+@author: M.Jastad
+'''
+
 from model.Image import Image
 
 
