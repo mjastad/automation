@@ -1,4 +1,11 @@
+#!/usr/bin/env python
+
+''' 
+Class StorageContainerService: A service pattern object designed around NTNX StorageContainer resource RESTful operations.
 '''
+
+from model.StorageContainer import StorageContainer
+
 __author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, CSRA Hackathon"
 __credits__ = ["Roger Gibson", "Dan Fallon"]
@@ -7,9 +14,6 @@ __version__ = "1.0.1"
 __maintainer__ = "M. Jastad"
 __email__ = "michael.jastad@nutanix.com"
 __status__ = "Reference"
-'''
-
-from model.StorageContainer import StorageContainer
 
 
 class StorageContainerService:
