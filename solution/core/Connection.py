@@ -1,4 +1,13 @@
+#!/usr/bin/env python
+
+''' 
+Class Connection: A non-mutable object designed to establish RESTful connections with a REST endpoint.
 '''
+
+import json
+import requests
+
+
 __author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, CSRA Hackathon"
 __credits__ = ["Roger Gibson", "Dan Fallon"]
@@ -7,10 +16,6 @@ __version__ = "1.0.1"
 __maintainer__ = "M. Jastad"
 __email__ = "michael.jastad@nutanix.com"
 __status__ = "Reference"
-'''
-
-import json
-import requests
 
 #disable warnings: caution certificates should be used to prevent mitm attacks
 requests.packages.urllib3.disable_warnings()
