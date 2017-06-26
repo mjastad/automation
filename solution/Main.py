@@ -1,7 +1,14 @@
 '''
-@file: Main.py
-@author: M.Jastad
+__author__ = "M. Jastad"
+__copyright__ = "Copyright 2017, CSRA Hackathon"
+__credits__ = ["Roger Gibson", "Dan Fallon"]
+__license__ = "N/A"
+__version__ = "1.0.1"
+__maintainer__ = "M. Jastad"
+__email__ = "michael.jastad@nutanix.com"
+__status__ = "Reference"
 '''
+
 from core.Connection import Connection
 from core.Host import Host
 from core.User import User
