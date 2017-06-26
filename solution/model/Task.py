@@ -1,7 +1,8 @@
 #!/usr/bin/env python
 
 ''' 
-Class Task: A non-mutable container object designed around NTNX REST endpiint Task resource.
+Class Task: A non-mutable container object designed around NTNX REST endpiint Task resource. Reference or handle to
+background process
 '''
 
 __author__ = "M. Jastad"
