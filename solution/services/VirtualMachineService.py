@@ -1,4 +1,12 @@
+#!/usr/bin/env python
+
+''' 
+Class VirtualMachineService: A service pattern object designed around NTNX VMS resource RESTful operations.
 '''
+
+from model.Task import Task
+from model.VirtualMachine import VirtualMachine
+
 __author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, CSRA Hackathon"
 __credits__ = ["Roger Gibson", "Dan Fallon"]
@@ -7,11 +15,6 @@ __version__ = "1.0.1"
 __maintainer__ = "M. Jastad"
 __email__ = "michael.jastad@nutanix.com"
 __status__ = "Reference"
-'''
-
-from model.Task import Task
-from model.VirtualMachine import VirtualMachine
-
 
 class VirtualMachineService:
 
