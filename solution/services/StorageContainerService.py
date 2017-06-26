@@ -1,3 +1,8 @@
+'''
+@file: Main.py
+@author: M.Jastad
+'''
+
 from model.StorageContainer import StorageContainer
 
 
