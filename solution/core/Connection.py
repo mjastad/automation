@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 
 ''' 
-Class Connection: A non-mutable object designed to establish RESTful connections with a REST endpoint.
+Class Connection: A non-mutable object designed to establish RESTful connections between Client & REST endpoint.
 '''
 
 import json
