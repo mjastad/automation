@@ -1,3 +1,6 @@
+'''
+@author: M.Jastad
+'''
 from core.Connection import Connection
 from core.Host import Host
 from core.User import User
