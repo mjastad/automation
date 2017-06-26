@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 
-obj.__doc__
+"""Main.py: NTNX REST API Driver."""
 
 from core.Connection import Connection
 from core.Host import Host
