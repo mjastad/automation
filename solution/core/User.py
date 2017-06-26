@@ -1,4 +1,4 @@
-!/usr/bin/env python
+#!/usr/bin/env python
 
 ''' 
 Class User: A non-mutable object designed to represent a user of a host RESTful endpoint.
