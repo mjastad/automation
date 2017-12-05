@@ -2,7 +2,7 @@ import json
 import requests
 
 __author__ = "M. Jastad"
-__copyright__ = "Copyright 2017, CSRA Hackathon"
+__copyright__ = "Copyright 2017, Calm Workshop"
 __credits__ = ["Chris Brown", "M.Lavi"]
 __license__ = "N/A"
 __version__ = "2.0.1"
