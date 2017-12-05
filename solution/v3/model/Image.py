@@ -8,7 +8,6 @@ __maintainer__ = "M. Jastad"
 __email__ = "michael.jastad@nutanix.com"
 __status__ = "Reference"
 
-
 class Image:
 
   def __init__(self, inst):
