@@ -1,5 +1,5 @@
 
-_author__ = "M. Jastad"
+__author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, CSRA Hackathon"
 __credits__ = ["M.Jastad", "M.Lavi"]
 __license__ = "N/A"
