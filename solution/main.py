@@ -31,11 +31,9 @@ __maintainer__ = "M. Jastad"
 __email__ = "michael.jastad@nutanix.com"
 __status__ = "Reference"
 
-USER = "admin"
-PASSWD = "passw0rd"
-IPADDRESS = "10.68.69.102"
-#PASSWD = "nx2Tech254!"
-#IPADDRESS = "10.21.71.39"
+USER = "REST Target User"
+PASSWD = "REST Target User Password"
+IPADDRESS = "REST Target IP"
 PORT = "9440"
 
 def _virtualMachines(connection):
