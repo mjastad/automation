@@ -7,6 +7,8 @@ __version__ = "1.0.1"
 __maintainer__ = "M. Jastad"
 __email__ = "michael.jastad@nutanix.com"
 __status__ = "Reference"
+
+
 class VirtualMachine:
 
   def __init__(self, inst):
