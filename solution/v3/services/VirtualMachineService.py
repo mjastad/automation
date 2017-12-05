@@ -1,7 +1,6 @@
 from v3.model.Task import Task
 from v3.model.VirtualMachine import VirtualMachine
 
-
 class VirtualMachineService:
 
     def __init__(self):
