@@ -1,6 +1,15 @@
 import json
 import requests
 
+__author__ = "M. Jastad"
+__copyright__ = "Copyright 2017, CSRA Hackathon"
+__credits__ = ["Chris Brown", "M.Lavi"]
+__license__ = "N/A"
+__version__ = "2.0.1"
+__maintainer__ = "M. Jastad"
+__email__ = "michael.jastad@nutanix.com"
+__status__ = "Reference"
+
 #disable warnings: caution certificates should be used to prevent mitm attacks
 requests.packages.urllib3.disable_warnings()
 
