@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+"""
+File: main.py: NTNX REST API Driver.
+"""
 
 from v2.core.Connection import Connection
 from v2.core.Host import Host
@@ -17,6 +22,15 @@ from v3.services.ApplicationService import ApplicationService
 from v3.services.BlueprintService import BlueprintService
 '''
 
+__author__ = "M. Jastad"
+__copyright__ = "Copyright 2017, CSRA Hackathon"
+__credits__ = ["Joseph Angeletti", "Mark Lavi"]
+__license__ = "N/A"
+__version__ = "2.0.1"
+__maintainer__ = "M. Jastad"
+__email__ = "michael.jastad@nutanix.com"
+__status__ = "Reference"
+
 USER = "admin"
 PASSWD = "passw0rd"
 IPADDRESS = "10.68.69.102"
@@ -27,7 +41,6 @@ PORT = "9440"
 def _virtualMachines(connection):
     vmList = VirtualMachineService().getVMS(connection)
     for vm in vmList : vm.show() 
-
 
 def getVirtualMachines(connection, data):
     vmList = VirtualMachineService().getVMS(connection, data)
