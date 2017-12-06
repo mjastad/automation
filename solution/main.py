@@ -23,7 +23,7 @@ from v3.services.BlueprintService import BlueprintService
 '''
 
 __author__ = "M. Jastad"
-__copyright__ = "Copyright 2017, CSRA Hackathon"
+__copyright__ = "Copyright 2017, Calm Workshop"
 __credits__ = ["Joseph Angeletti", "Mark Lavi"]
 __license__ = "N/A"
 __version__ = "2.0.1"
