@@ -48,7 +48,7 @@ def getApplications(connection, data):
     appList = ApplicationService().getApplications(connection, data)
     for app in appList : app.show() 
 
-def getBlueprintss(connection, data):
+def getBlueprints(connection, data):
     bpList = BlueprintService().getBlueprints(connection, data)
     for bp in bpList : bp.show()
      
