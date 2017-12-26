@@ -1,14 +1,8 @@
 
-__author__ = "M. Jastad"
-__copyright__ = "Copyright 2017, Calm Workshop"
-__credits__ = ["Chris Brown", "M.Lavi"]
-__license__ = "N/A"
-__version__ = "2.0.1"
-__maintainer__ = "M. Jastad"
-__email__ = "michael.jastad@nutanix.com"
-__status__ = "Reference"
 
 class VirtualMachine:
+
+  type = "Virtual Machine"
 
   def __init__(self, inst):
      self.instance = inst
@@ -34,6 +28,7 @@ class VirtualMachine:
      return str(self.instance['status']['resources']['memory_size_mib'])
 
   def show(self):
+     print 'type: ' + self.type
      print 'name: ' +  self.name
      print 'description: ' + self.description
      print 'uuid: ' +  self.uuid

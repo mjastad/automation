@@ -1,21 +1,14 @@
 
-__author__ = "M. Jastad"
-__copyright__ = "Copyright 2017, Calm Workshop"
-__credits__ = ["Chris Brown", "M.Lavi"]
-__license__ = "N/A"
-__version__ = "2.0.1"
-__maintainer__ = "M. Jastad"
-__email__ = "michael.jastad@nutanix.com"
-__status__ = "Reference"
-
 class Application:
+
+  type = "Application"
 
   def __init__(self, inst):
      self.instance = inst
 
   @property
   def name(self):
-     return self.instance['status']['name']
+     return self.instance['metadata']['name']
 
   @property
   def description(self):
@@ -23,11 +16,23 @@ class Application:
 
   @property
   def uuid(self):
-     return self.instance['status']['uuid']
+     return self.instance['metadata']['uuid']
 
   @property
   def state(self):
-     return self.instance['status']['state']
+
+     state = "Unknown"
+
+     if 'state' in self.instance['status'] :
+        state = self.instance['status']['state']
+     else :
+        state = self.instance['status']['resources']['app_state']
+
+     return state
+
+  @property
+  def state_uuid(self):
+     return self.instance['status']['resources']['app_state']
 
   @property
   def blueprint(self):
@@ -49,15 +54,31 @@ class Application:
   def owner(self):
      return self.instance['metadata']['owner_reference']['name']
 
+  @property
+  def status(self):
+     return self.instance['status']
+
+  @property
+  def spec(self):
+     return self.instance['spec']
+
+  @property
+  def metadata(self):
+     return self.instance['metadata']
+
+  @property
+  def apiVersion(self):
+     return self.instance['api_version']
 
   def show(self):
-     print 'name: ' +  self.name
+     print 'type: ' + self.type 
+     print 'name: ' + self.name
      #print 'description: ' + self.description
-     print 'uuid: ' +  self.uuid
+     print 'uuid: ' + self.uuid
      print 'state: ' + self.state
      print 'blueprint: ' +  self.blueprint
      print 'blueprint_uuid: ' + self.blueprint_uuid
-     print 'project: ' +  self.project
+     print 'project: ' + self.project
      print 'project_uuid: ' + self.project_uuid
      print 'owner: ' + self.owner
      print ' '
