@@ -2,15 +2,6 @@ from v3.model.Task import Task
 from v3.model.Application import Application 
 from v3.model.Response import Response 
 
-__author__ = "M. Jastad"
-__copyright__ = "Copyright 2017, Calm Workshop"
-__credits__ = ["Chris Brown", "M.Lavi"]
-__license__ = "N/A"
-__version__ = "2.0.1"
-__maintainer__ = "M. Jastad"
-__email__ = "michael.jastad@nutanix.com"
-__status__ = "Reference"
-
 
 class ApplicationService:
 
@@ -23,13 +14,13 @@ class ApplicationService:
 
     def getApplication(self, conn, uuid):
         appDictionary = conn.get(self.RESOURCE_APP + uuid)
-        return Appliction(appDictionary)
+        return Application(appDictionary)
 
     def getApplications(self, conn, data):
         appList = []
         appDictionary = conn.post(self.RESOURCE_APP + 'list', data)
         for app in appDictionary['entities']:
-             appList.append(Application(app))
+	   appList.append(Application(app))
 
         return appList
 
@@ -45,10 +36,9 @@ class ApplicationService:
         status_dictionary = conn.put(self.RESOURCE_APP + app.uuid, data)
         return Response(status_dictionary)
 
-    def find(self, conn, id):
-        data = {'filter':'', 'offset': 0, 'length': 100}
+    def findApplication(self, conn, id):
+        data = {'filter': 'name=='+id, 'offset': 0, 'length': 20}
         appList = self.getApplications(conn, data)
-        for app in appList :
-            if id == app.name : return app 
+        for app in appList : return app
 
         return None
