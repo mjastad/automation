@@ -3,15 +3,15 @@
 """
 File: main.py: NTNX REST API Driver.
 """
-
+'''
 from v2.core.Connection import Connection
 from v2.core.Host import Host
 from v2.core.User import User
 from v2.services.VirtualMachineService import VirtualMachineService
 from v2.services.ImageService import ImageService
 from v2.services.StorageContainerService import StorageContainerService
-
 '''
+
 from v3.core.Connection import Connection
 from v3.core.Host import Host
 from v3.core.User import User
@@ -21,7 +21,7 @@ from v3.services.StorageContainerService import StorageContainerService
 from v3.services.ApplicationService import ApplicationService
 from v3.services.BlueprintService import BlueprintService
 from v3.services.ProjectService import ProjectService
-'''
+
 
 __author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, Calm Workshop"
