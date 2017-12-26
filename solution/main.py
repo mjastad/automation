@@ -44,22 +44,9 @@ PROJECT = "NAME OF PROJECT"
 def _virtualMachines(connection):
     vmList = VirtualMachineService().getVMS(connection)
     for vm in vmList : vm.show() 
-
-def getVirtualMachines(connection, data):
-    vmList = VirtualMachineService().getVMS(connection, data)
-    for vm in vmList : vm.show() 
-
-def getApplications(connection, data):
-    appList = ApplicationService().getApplications(connection, data)
-    for app in appList : app.show() 
-
-def getBlueprints(connection, data):
-    bpList = BlueprintService().getBlueprints(connection, data)
-    for bp in bpList : bp.show()
-
-def getProjects(connection, data):
-    projectList = ProjectService().getProjects(connection, data)
-    for project in projectList : project.show()
+        
+def showList(itemList):
+    for item in itemList : item.show()
 
 def main():
 
@@ -70,22 +57,22 @@ def main():
     connection = Connection(user, host)
 
     #v2 API
-    #_virtualMachines(connection) 
+    #showList(VirtualMachineService().getVMS(connection, data)) 
 
     #v3 API
-    #getVirtualMachines(connection, data) 
+    #showList(VirtualMachineService().getVMS(connection, data)) 
 
-    getApplications(connection, data) 
+    showList(ApplicationService().getApplications(connection, data)) 
     application = ApplicationService().findApplication(connection, APPLICATION)
     application = ApplicationService().getApplication(connection, application.uuid)
     application.show()
     
-    getBlueprints(connection, data) 
+    showList(BlueprintService().getBlueprints(connection, data)) 
     blueprint = BlueprintService().findBlueprint(connection, BLUEPRINT)
     blueprint = BlueprintService().getBlueprint(connection, blueprint.uuid) 
     blueprint.show()
     
-    getProjects(connection, data) 
+    showList(ProjectService().getProjects(connection, data)) 
     project = ProjectService().findProject(connection, PROJECT) 
     project = ProjectService().getProject(connection, project.uuid)
     project.show()
