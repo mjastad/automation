@@ -53,25 +53,13 @@ def getApplications(connection, data):
     appList = ApplicationService().getApplications(connection, data)
     for app in appList : app.show() 
 
-def getApplication(connection, data):
-    application = ApplicationService().getApplication(connection, data)
-    application.show() 
-
 def getBlueprints(connection, data):
     bpList = BlueprintService().getBlueprints(connection, data)
     for bp in bpList : bp.show()
 
-def getBlueprint(connection, data):
-    blueprint = BlueprintService().getBlueprint(connection, data)
-    blueprint.show()
-
 def getProjects(connection, data):
     projectList = ProjectService().getProjects(connection, data)
     for project in projectList : project.show()
-
-def getProject(connection, data):
-    project = ProjectService().getProject(connection, data)
-    project.show()
 
 def main():
 
@@ -89,15 +77,18 @@ def main():
 
     getApplications(connection, data) 
     application = ApplicationService().findApplication(connection, APPLICATION)
-    getApplication(connection,application.uuid)
-
+    application = ApplicationService().getApplication(connection, application.uuid)
+    application.show()
+    
     getBlueprints(connection, data) 
     blueprint = BlueprintService().findBlueprint(connection, BLUEPRINT)
-    getBlueprint(connection, blueprint.uuid) 
-
+    blueprint = BlueprintService().getBlueprint(connection, blueprint.uuid) 
+    blueprint.show()
+    
     getProjects(connection, data) 
     project = ProjectService().findProject(connection, PROJECT) 
-    getProject(connection, project.uuid) 
+    project = ProjectService().getProject(connection, project.uuid)
+    project.show()
 
 if __name__ == "__main__":
     main()
