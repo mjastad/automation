@@ -20,6 +20,7 @@ from v3.services.ImageService import ImageService
 from v3.services.StorageContainerService import StorageContainerService
 from v3.services.ApplicationService import ApplicationService
 from v3.services.BlueprintService import BlueprintService
+from v3.services.ProjectService import ProjectService
 '''
 
 __author__ = "M. Jastad"
@@ -36,6 +37,10 @@ PASSWD = "REST Target User Password"
 IPADDRESS = "REST Target IP"
 PORT = "9440"
 
+APPLICATION = "NAME OF APPLICATION"
+BLUEPRINT = "NAME OF BLUEPRINT"
+PROJECT = "NAME OF PROJECT"
+
 def _virtualMachines(connection):
     vmList = VirtualMachineService().getVMS(connection)
     for vm in vmList : vm.show() 
@@ -48,10 +53,25 @@ def getApplications(connection, data):
     appList = ApplicationService().getApplications(connection, data)
     for app in appList : app.show() 
 
+def getApplication(connection, data):
+    application = ApplicationService().getApplication(connection, data)
+    application.show() 
+
 def getBlueprints(connection, data):
     bpList = BlueprintService().getBlueprints(connection, data)
     for bp in bpList : bp.show()
-     
+
+def getBlueprint(connection, data):
+    blueprint = BlueprintService().getBlueprint(connection, data)
+    blueprint.show()
+
+def getProjects(connection, data):
+    projectList = ProjectService().getProjects(connection, data)
+    for project in projectList : project.show()
+
+def getProject(connection, data):
+    project = ProjectService().getProject(connection, data)
+    project.show()
 
 def main():
 
@@ -62,12 +82,22 @@ def main():
     connection = Connection(user, host)
 
     #v2 API
-    _virtualMachines(connection) 
+    #_virtualMachines(connection) 
 
     #v3 API
     #getVirtualMachines(connection, data) 
-    #getApplications(connection, data) 
-    #getBlueprints(connection, data) 
+
+    getApplications(connection, data) 
+    application = ApplicationService().findApplication(connection, APPLICATION)
+    getApplication(connection,application.uuid)
+
+    getBlueprints(connection, data) 
+    blueprint = BlueprintService().findBlueprint(connection, BLUEPRINT)
+    getBlueprint(connection, blueprint.uuid) 
+
+    getProjects(connection, data) 
+    project = ProjectService().findProject(connection, PROJECT) 
+    getProject(connection, project.uuid) 
 
 if __name__ == "__main__":
     main()
