@@ -1,6 +1,6 @@
-
-
 class VirtualMachine:
+
+  type = "virtual machine"
 
   def __init__(self, inst):
      self.instance = inst
@@ -26,6 +26,7 @@ class VirtualMachine:
      return self.instance['memory_mb']
 
   def show(self):
+     print 'type: ' + str(self.type)
      print 'name: ' + str(self.name)
      #print 'description: ' + str(self.description)
      print 'uuid: ' + str(self.uuid)

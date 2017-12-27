@@ -1,6 +1,6 @@
-
-
 class Image:
+
+  type = "image"
 
   def __init__(self, inst):
      self.instance = inst
@@ -22,7 +22,7 @@ class Image:
       return self.instance['storage_container_uuid']
 
   @property
-  def type(self):
+  def image_type(self):
       return self.instance['image_type']
 
   @property
@@ -34,11 +34,12 @@ class Image:
       return self.instance['vm_disk_size']
 
   def show(self):
+  	print "type: " + self.type
   	print "name: " + self.name
 	print "uuid: " + self.uuid
 	print "vmdisk uuid: " + self.vmdisk_uuid
 	print "storagecontainer uuid: " + self.storagecontainer_uuid
-	print "type: " + self.type
+	print "image type: " + self.image_type
 	print "state:" + self.state
 	#print "vm disk size:" + self.size
 	print ' '

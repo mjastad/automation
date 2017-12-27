@@ -1,6 +1,6 @@
-
-
 class StorageContainer:
+
+  type = "storage container"
 
   def __init__(self, inst):
      self.instance = inst
@@ -26,6 +26,7 @@ class StorageContainer:
       return self.instance['replication_factor']
 
   def show(self):
+      print "type: " + self.type
       print "name: " + self.name
       print "uuid: " + self.uuid
       print "id: " + self.id
