@@ -1,11 +1,4 @@
-__author__ = "M. Jastad"
-__copyright__ = "Copyright 2017, CSRA Hackathon"
-__credits__ = ["Roger Gibson", "Dan Fallon"]
-__license__ = "N/A"
-__version__ = "1.0.1"
-__maintainer__ = "M. Jastad"
-__email__ = "michael.jastad@nutanix.com"
-__status__ = "Reference"
+
 
 class Image:
 
@@ -22,7 +15,7 @@ class Image:
 
   @property
   def vmdisk_uuid(self):
-      return self.instance['vm_disk_uuid']
+      return self.instance['vm_disk_id']
 
   @property
   def storagecontainer_uuid(self):
@@ -35,3 +28,17 @@ class Image:
   @property
   def state(self):
       return self.instance['image_state']
+
+  @property
+  def size(self):
+      return self.instance['vm_disk_size']
+
+  def show(self):
+  	print "name: " + self.name
+	print "uuid: " + self.uuid
+	print "vmdisk uuid: " + self.vmdisk_uuid
+	print "storagecontainer uuid: " + self.storagecontainer_uuid
+	print "type: " + self.type
+	print "state:" + self.state
+	#print "vm disk size:" + self.size
+	print ' '
