@@ -1,38 +1,36 @@
-
-
 class VirtualMachine:
 
-  type = "Virtual Machine"
+  type = "virtual machine"
 
   def __init__(self, inst):
      self.instance = inst
 
   @property
   def name(self):
-     return str(self.instance['status']['name'])
+     return self.instance['name']
 
   @property
   def description(self):
-     return str(self.instance['status']['description'])
+     return self.instance['description']
 
   @property
   def uuid(self):
-     return str(self.instance['metadata']['uuid'])
+     return self.instance['uuid']
 
   @property
   def powerState(self):
-     return str(self.instance['status']['resources']['power_state'])
+     return self.instance['power_state']
 
   @property
   def memory(self):
-     return str(self.instance['status']['resources']['memory_size_mib'])
+     return self.instance['memory_mb']
 
   def show(self):
-     print 'type: ' + self.type
-     print 'name: ' +  self.name
-     print 'description: ' + self.description
-     print 'uuid: ' +  self.uuid
-     print 'power state: ' + self.powerState
-     print 'memory: ' +  self.memory
+     print 'type: ' + str(self.type)
+     print 'name: ' + str(self.name)
+     #print 'description: ' + str(self.description)
+     print 'uuid: ' + str(self.uuid)
+     print 'power state: ' + str(self.powerState)
+     print 'memory: ' + str(self.memory)
      print ' '
-
+ 
