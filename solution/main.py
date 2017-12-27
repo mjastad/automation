@@ -40,10 +40,6 @@ PORT = "9440"
 APPLICATION = "NAME OF APPLICATION"
 BLUEPRINT = "NAME OF BLUEPRINT"
 PROJECT = "NAME OF PROJECT"
-
-def _virtualMachines(connection):
-    vmList = VirtualMachineService().getVMS(connection)
-    for vm in vmList : vm.show() 
         
 def showList(itemList):
     for item in itemList : item.show()
@@ -57,7 +53,9 @@ def main():
     connection = Connection(user, host)
 
     #v2 API
-    #showList(VirtualMachineService().getVMS(connection, data)) 
+    #showList(VirtualMachineService().getVMS(connection))
+    #showList(ImageService().getImages(connection))
+    #showList(StorageContainerService().getStorageContainers(connection))
 
     #v3 API
     #showList(VirtualMachineService().getVMS(connection, data)) 
