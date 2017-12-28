@@ -4,8 +4,8 @@
 File: main.py: NTNX REST API Driver.
 """
 
-from V3 import * 
 #from V2 import *
+from V3 import * 
 
 __author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, Calm Workshop"
