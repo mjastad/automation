@@ -35,6 +35,10 @@ class Blueprint:
      return self.instance['metadata']['owner_reference']['name']
 
   @property
+  def entity(self):
+     return self.instance
+
+  @property
   def status(self):
      return self.instance['status']
 
