@@ -41,9 +41,10 @@ class VirtualMachineService:
         task_dictionary = conn.post(self.RESOURCE_VM + vm.uuid + self.RESOURCE_VM_PWR_STATE, data)
         return Task(task_dictionary)
 
-    def find(self, conn, id):
-        vmList = self.getVMS(conn)
-        for vm in vmList :
-            if id == vm.name : return vm
+    def findVM(self, conn, id):
+        data = {'filter': '', 'offset': 0, 'length': 20}
+        vmList = self.getVMS(conn, data)
+        for vm in vmList : 
+	  if vm.name == id : return vm
 
         return None

@@ -27,7 +27,7 @@ class ProjectService:
 
 
     def findProject(self, conn, id):
-        data = {'filter':'name=='+id, 'offset': 0, 'length': 100}
+        data = {'filter':'name=='+id, 'offset': 0, 'length': 20}
         projectList = self.getProjects(conn, data)
         for project in projectList : return project 
 
