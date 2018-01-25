@@ -1,4 +1,13 @@
 from V3 import *
+
+def getApplication(connection, appname):
+    application = None
+    application = ApplicationService().findApplication(connection, appname)
+
+    if application :
+        application = ApplicationService().getApplication(connection, application.uuid)
+
+    return application
   
 def getProject(connection, projname):
     project = None
@@ -18,8 +27,19 @@ def getBlueprint(connection, bpname, bpstate):
 
     return blueprint
 
-def importBlueprint(connection, projname, bpfile, bpname, bpstate):
+def deleteApplication(connection, appname) :
+    application = getApplication(connection,appname)
 
+    if application : 
+	ApplicationService().deleteApplication(connection, application)
+
+def deleteBlueprint(connection, bpname, bpstate) : 
+    blueprint = getBlueprint(connection, bpname, bpstate)
+
+    if blueprint : 
+        BlueprintService().deleteBlueprint(connection, blueprint)
+
+def importBlueprint(connection, projname, bpfile, bpname, bpstate):
     project = getProject(connection,projname)
     if project :
         response = BlueprintService().importBlueprint(connection,bpfile, bpname, project)
@@ -32,8 +52,8 @@ def modifyCredential(connection, bpname, bpstate, credential, password):
 
     if blueprint :
         del(blueprint.entity["status"])
-
         length = len(blueprint.entity["spec"]["resources"]["credential_definition_list"])
+
         for x in range(0, length):
            if blueprint.entity["spec"]["resources"]["credential_definition_list"][x]["name"] == credential :
               blueprint.entity["spec"]["resources"]["credential_definition_list"][x]["secret"]["value"] = password
@@ -44,18 +64,7 @@ def modifyCredential(connection, bpname, bpstate, credential, password):
 
     return response
 
-def getApplication(connection, appname):
-    application = None
-    application = ApplicationService().findApplication(connection, appname)
-
-    if application :
-        application = ApplicationService().getApplication(connection, application.uuid)
-
-    return application
-
-
 def launchBlueprint(connection, bpname, bpstate, appname):
-
     blueprint = getBlueprint(connection, bpname, bpstate)
     if blueprint :
         response = BlueprintService().launchBlueprint(connection, blueprint, appname)

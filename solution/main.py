@@ -40,9 +40,12 @@ def main():
     #showList(BlueprintService().getBlueprints(connection, data)) 
     #showList(ProjectService().getProjects(connection, data)) 
 
-    importBlueprint(connection, PROJECT, BLUEPRINT_FILE, BLUEPRINT, DRAFT)
-    modifyCredential(connection, BLUEPRINT, DRAFT, CREDENTIAL, PASSWORD)
-    launchBlueprint(connection, BLUEPRINT, ACTIVE, APPLICATION)
+    #importBlueprint(connection, PROJECT, BLUEPRINT_FILE, BLUEPRINT, DRAFT)
+    #modifyCredential(connection, BLUEPRINT, DRAFT, CREDENTIAL, PASSWORD)
+    #launchBlueprint(connection, BLUEPRINT, ACTIVE, APPLICATION)
+
+    #deleteBlueprint(connection, BLUEPRINT, ACTIVE)
+    #deleteApplication(connection, APPLICATION)
 
 if __name__ == "__main__":
     main()
