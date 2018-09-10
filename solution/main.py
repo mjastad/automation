@@ -11,11 +11,11 @@ from manageBlueprint import *
 
 __author__ = "M. Jastad"
 __copyright__ = "Copyright 2017, Calm Workshop"
-__credits__ = ["Joseph Angeletti", "Mark Lavi"]
+__credits__ = ["JAA", "ML"]
 __license__ = "Use-As-Is"
 __version__ = "2.0.1"
 __maintainer__ = "M. Jastad"
-__email__ = "michael.jastad@nutanix.com"
+__email__ = "mjastad@gmail.com"
 __status__ = "Reference"
 
 def showList(itemList):
